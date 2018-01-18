@@ -1,20 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
-  <entry>
-    <title><![CDATA[Hexo 测试]]></title>
-    <url>%2F2018%2F01%2F18%2FHexo-%E6%B5%8B%E8%AF%95%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Hexo测试</category>
-      </categories>
-      <tags>
-        <tag>标签1</tag>
-        <tag>标签2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2F2018%2F01%2F17%2F1%2F</url>
-    <content type="text"><![CDATA[测试测试]]></content>
-  </entry>
 </search>
