@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[firstName]]></title>
+    <url>%2F2018%2F01%2F23%2FfirstName%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Mac上搭建基于GitHhub的Hexo博客]]></title>
     <url>%2F2018%2F01%2F23%2FMac%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EGitHhub%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[注册GitHub帐号 进入GitHub官网注册帐号 创建一个仓库，名称为 yourname.github.io 其中yourname是你的github名称,按照这个规则创建才有用。如你的github注册名称为jack那你创建的仓库名称为jack.github.io 安装node.js 进入nodejs官网下载一步步安装即可,建议安装通用版。 安装完成后可以在终端测试 Node.js 和npm 是否可以使用了。 查看 Node.js 的版本号在终端里输入如下命令：node -v 如果Node.js 成功安装，可以看到类似如下的信息：v6.5.0。查看npm 的版本号在终端里输入如下命令：npm -v如果npm 成功安装，可以看到类似如下的信息：3.10.3。注意命令中间有空格。 安装hexo 可以查看Hexo中文文档 在终端输入 npm install -g hexo-cli 安装 如果Mac系统在安装过程中报错需要安装命令行工具 在终端中输入命令 xcode-select --install会弹出一个窗口选择安装即可。安装完成后输入命令 gcc-v会看到如下信息 Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1 Apple LLVM version 8.0.0 (clang-800.0.38) Target: x86_64-apple-darwin15.5.0 Thread model: posix InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin说明安装完成 安装完命令行工具后再输入 $ npm install -g hexo-cli 来安装Hexo，安装完成后输入 hexo 命令会出现下图]]></content>
+    <content type="text"><![CDATA[注册GitHub帐号 进入GitHub官网注册帐号 创建一个仓库，名称为 yourname.github.io 其中yourname是你的github名称,按照这个规则创建才有用。如你的github注册名称为jack那你创建的仓库名称为jack.github.io 安装node.js 进入nodejs官网下载一步步安装即可,建议安装通用版。 安装完成后可以在终端测试 Node.js 和npm 是否可以使用了。 查看 Node.js 的版本号在终端里输入如下命令：node -v 如果Node.js 成功安装，可以看到类似如下的信息：v6.5.0。查看npm 的版本号在终端里输入如下命令：npm -v如果npm 成功安装，可以看到类似如下的信息：3.10.3。注意命令中间有空格。 安装hexo 可以查看Hexo中文文档 在终端输入 npm install -g hexo-cli 安装 如果Mac系统在安装过程中报错需要安装命令行工具 在终端中输入命令 xcode-select --install会弹出一个窗口选择安装即可。安装完成后输入命令 gcc-v会看到如下信息 Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1 Apple LLVM version 8.0.0 (clang-800.0.38) Target: x86_64-apple-darwin15.5.0 Thread model: posix InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin说明安装完成 安装完命令行工具后再输入 $ npm install -g hexo-cli 来安装Hexo，安装完成后输入 hexo 命令会出现下图 初始化博客 新建一个文件夹如我是在文档下新建了一个名称为blog的文件夹名字可以随便取在终端cd到该文件夹 cd Documents/blog/ 然后运行 hexo init命令行，速度取决于网速，可能需要几分钟完成，成功后会在blog目录下生成相关文件，如图 安装完成后运行 hexo s 现在即可在浏览器本地访问 http://localhost:4000/ 会出现下图证明安装成功 关联GitHub 终端 open Documents/blog/ 打开刚才新建的blog文件夹就是我们把hexo init的那个文件夹。打开文件夹下 _config.yml文件,建议使用Sublime Text打开其他文本编辑器也行，滑到最下面修改成如下样子,将我的名字改成你的名字。注意：在配置所有的_config.yml文件时（包括theme中的）在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错 在blog文件夹目录下执行生成静态页面命令：hexo g 然后执行hexo d执行hexo d部署需要你的github用户名和密码 发布文章 终端cd到blog文件夹下运行 hexo new “firstName”名为firstName.md的文件会建在目录/blog/source/_posts下，firstName是文件名.建议使用Mou编辑器。如下图，新建title：为文章名称，date：创建时间，tags:文章所属标签，categories：文章所属分类，注意刚开始新建的文章打开是没有分类的需要修改新建文章模版，打开目录下scaffolds文件夹下的post.md文件在标签上面添加 categories:后续新建文章就会添加分类栏目。如下图是这篇文章的属性，分类和标签可修改成任意名称，Hexo会自动根据标签和分类归纳文章。]]></content>
       <categories>
         <category>技术杂记</category>
       </categories>

@@ -296,6 +296,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/firstName/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="9men">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9men">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/23/firstName/" itemprop="url">firstName</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T10:52:35+08:00">
+                2018-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/23/firstName/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/23/firstName/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -428,6 +558,20 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 </ul>
 </li>
 <li>安装完命令行工具后再输入 $ npm install -g hexo-cli 来安装Hexo，安装完成后输入 <code>hexo</code> 命令会出现下图<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/Hexo安装完成图.png" alt="Hexo安装完成图"></li>
+</ul>
+</li>
+<li>初始化博客<ul>
+<li>新建一个文件夹如我是在文档下新建了一个名称为blog的文件夹名字可以随便取在终端cd到该文件夹 <code>cd Documents/blog/</code> 然后运行 <code>hexo init</code>命令行，速度取决于网速，可能需要几分钟完成，成功后会在blog目录下生成相关文件，如图<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/blog相关文件目录.png" alt="初始化后生成的文件目录结构"></li>
+<li>安装完成后运行 <code>hexo s</code> 现在即可在浏览器本地访问 <code>http://localhost:4000/</code> 会出现下图证明安装成功<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/hexo.png" alt="初始化后生成的文件目录结构"></li>
+</ul>
+</li>
+<li>关联GitHub<ul>
+<li>终端 <code>open Documents/blog/</code> 打开刚才新建的blog文件夹就是我们把hexo init的那个文件夹。打开文件夹下 <code>_config.yml</code>文件,建议使用Sublime Text打开其他文本编辑器也行，滑到最下面修改成如下样子,将我的名字改成你的名字。<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/关联github.png" alt="初始化后生成的文件目录结构"><br><code>注意：在配置所有的_config.yml文件时（包括theme中的）在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错</code></li>
+<li>在blog文件夹目录下执行生成静态页面命令：<code>hexo g</code> 然后执行<code>hexo d</code><br>执行hexo d部署需要你的github用户名和密码</li>
+</ul>
+</li>
+<li>发布文章<ul>
+<li>终端cd到blog文件夹下运行 <code>hexo new “firstName”</code>名为firstName.md的文件会建在目录/blog/source/_posts下，firstName是文件名.建议使用Mou编辑器。如下图，新建title：为文章名称，date：创建时间，tags:文章所属标签，categories：文章所属分类，注意刚开始新建的文章打开是没有分类的需要修改新建文章模版，打开目录下scaffolds文件夹下的post.md文件在标签上面添加 <code>categories:</code>后续新建文章就会添加分类栏目。<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/新建文章.png" alt="新建文章"><br>如下图是这篇文章的属性，分类和标签可修改成任意名称，Hexo会自动根据标签和分类归纳文章。<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/文章属性.png" alt="文章属性"></li>
 </ul>
 </li>
 </ol>
@@ -647,7 +791,7 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
