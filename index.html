@@ -420,53 +420,19 @@
       
         
           
-            <ol>
-<li><p>注册GitHub帐号</p>
-<ul>
-<li>进入<a href="https://github.com/" target="_blank" rel="noopener">GitHub官网</a>注册帐号</li>
-<li>创建一个仓库，名称为 yourname.github.io 其中yourname是你的github名称,按照这个规则创建才有用。如你的github注册名称为jack那你创建的仓库名称为jack.github.io</li>
-</ul>
-</li>
-<li><p>安装node.js</p>
-<ul>
-<li>进入<a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs官网</a>下载一步步安装即可,建议安装通用版。</li>
-<li>安装完成后可以在终端测试 Node.js 和npm 是否可以使用了。<ul>
-<li>查看 Node.js 的版本号在终端里输入如下命令：<code>node -v</code> 如果Node.js 成功安装，可以看到类似如下的信息：v6.5.0。查看npm 的版本号在终端里输入如下命令：<code>npm -v</code>如果npm 成功安装，可以看到类似如下的信息：3.10.3。注意命令中间有空格。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>安装hexo<ul>
-<li>可以查看<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo中文文档</a></li>
-<li>在终端输入 <code>npm install -g hexo-cli</code> 安装</li>
-<li>如果Mac系统在安装过程中报错需要安装命令行工具<ul>
-<li>在终端中输入命令 <code>xcode-select --install</code>会弹出一个窗口选择安装即可。安装完成后输入命令 <code>gcc-v</code>会看到如下信息 <code>Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
-Apple LLVM version 8.0.0 (clang-800.0.38)
-Target: x86_64-apple-darwin15.5.0
-Thread model: posix
-InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin</code>说明安装完成</li>
-</ul>
-</li>
-<li>安装完命令行工具后再输入 $ npm install -g hexo-cli 来安装Hexo，安装完成后输入 <code>hexo</code> 命令会出现下图<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/Hexo安装完成图.png" alt="Hexo安装完成图"></li>
-</ul>
-</li>
-<li>初始化博客<ul>
-<li>新建一个文件夹如我是在文档下新建了一个名称为blog的文件夹名字可以随便取在终端cd到该文件夹 <code>cd Documents/blog/</code> 然后运行 <code>hexo init</code>命令行，速度取决于网速，可能需要几分钟完成，成功后会在blog目录下生成相关文件，如图<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/blog相关文件目录.png" alt="初始化后生成的文件目录结构"></li>
-<li>安装完成后运行 <code>hexo s</code> 现在即可在浏览器本地访问 <code>http://localhost:4000/</code> 会出现下图证明安装成功<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/hexo.png" alt="初始化后生成的文件目录结构"></li>
-</ul>
-</li>
-<li>关联GitHub<ul>
-<li>终端 <code>open Documents/blog/</code> 打开刚才新建的blog文件夹就是我们把hexo init的那个文件夹。打开文件夹下 <code>_config.yml</code>文件,建议使用Sublime Text打开其他文本编辑器也行，滑到最下面修改成如下样子,将我的名字改成你的名字。<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/关联github.png" alt="初始化后生成的文件目录结构"><br><code>注意：在配置所有的_config.yml文件时（包括theme中的）在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错</code></li>
-<li>在blog文件夹目录下执行生成静态页面命令：<code>hexo g</code> 然后执行<code>hexo d</code><br>执行hexo d部署需要你的github用户名和密码</li>
-</ul>
-</li>
-<li>发布文章<ul>
-<li>终端cd到blog文件夹下运行 <code>hexo new “firstName”</code>名为firstName.md的文件会建在目录/blog/source/_posts下，firstName是文件名.建议使用Mou编辑器。如下图，新建title：为文章名称，date：创建时间，tags:文章所属标签，categories：文章所属分类，注意刚开始新建的文章打开是没有分类的需要修改新建文章模版，打开目录下scaffolds文件夹下的post.md文件在标签上面添加 <code>categories:</code>后续新建文章就会添加分类栏目。<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/新建文章.png" alt="新建文章"><br>如下图是这篇文章的属性，分类和标签可修改成任意名称，Hexo会自动根据标签和分类归纳文章。<br><img src="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/文章属性.png" alt="文章属性"></li>
-</ul>
-</li>
-</ol>
-
           
+注册GitHub帐号
+
+进入GitHub官网注册帐号
+创建一个仓库，名称为 yourname.github.io 其中yourname是你的github名称,按照这个规则创建才有用。如你的githu
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/23/Mac上搭建基于GitHhub的Hexo博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -615,9 +581,16 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
       
         
           
-            <p>hello world</p>
+          hello world
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/18/index/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
