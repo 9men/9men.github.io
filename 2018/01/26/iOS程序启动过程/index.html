@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="9men">
 <meta property="og:description" content="点击程序图标打开程序 执行main函数 执行UIApplicationMain函数 通过UIApplicationMain方法的反射创建UIApplication对象设置代理，开启消息循环  开启监听程序事件   123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDict">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-26T15:29:18.000Z">
+<meta property="og:updated_time" content="2018-01-26T15:30:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS程序启动过程">
 <meta name="twitter:description" content="点击程序图标打开程序 执行main函数 执行UIApplicationMain函数 通过UIApplicationMain方法的反射创建UIApplication对象设置代理，开启消息循环  开启监听程序事件   123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDict">
@@ -466,7 +466,7 @@
 </ul>
 </li>
 <li><p>通过代码加载</p>
-<pre><code><figure class="highlight mm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">					- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</span><br><span class="line">    <span class="comment">// Override point for customization after application launch.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight mm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">				- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</span><br><span class="line">    <span class="comment">// Override point for customization after application launch.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li>首先创建串口，获取到一个UIWindow实例来显示界面。（self.window为系统自带）</li>
 <li>创建一个控制器，将该控制器设置为根控制器</li>
