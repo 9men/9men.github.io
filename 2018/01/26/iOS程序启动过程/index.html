@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="9men">
 <meta property="og:description" content="点击程序图标打开程序 执行main函数 执行UIApplicationMain函数 通过UIApplicationMain方法的反射创建UIApplication对象设置代理，开启消息循环  开启监听程序事件   123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDict">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-26T14:08:27.000Z">
+<meta property="og:updated_time" content="2018-01-26T14:10:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS程序启动过程">
 <meta name="twitter:description" content="点击程序图标打开程序 执行main函数 执行UIApplicationMain函数 通过UIApplicationMain方法的反射创建UIApplication对象设置代理，开启消息循环  开启监听程序事件   123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDict">
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  383
+                  389
                 </span>
               
 
@@ -466,10 +466,7 @@
 </ul>
 </li>
 <li><p>通过代码加载</p>
-<p>  ```</p>
-<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-</code></pre><p>self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];<br>UIViewController *viewController = [[UIViewController alloc]init];<br>self.window.rootViewController = viewController;<br>[self.window makeKeyAndVisible];<br>return YES;<br>}</p>
-<p>  ```mm</p>
+  <figure class="highlight mm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">				- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</span><br><span class="line">    <span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc]initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</span><br><span class="line">    <span class="built_in">UIViewController</span> *viewController = [[<span class="built_in">UIViewController</span> alloc]init];</span><br><span class="line">    <span class="keyword">self</span>.window.rootViewController = viewController;</span><br><span class="line">    [<span class="keyword">self</span>.window makeKeyAndVisible];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>首先创建串口，获取到一个UIWindow实例来显示界面。（self.window为系统自带）</li>
 <li>创建一个控制器，将该控制器设置为根控制器</li>
@@ -720,7 +717,7 @@
   本站访客数:<span id="busuanzi_value_site_uv"></span>人次
   </span>
   <div class="powered-by">
-  <span class="post-count">博客全站共1.2k字</span>
+  <span class="post-count">博客全站共1.3k字</span>
 </div>
 
 
