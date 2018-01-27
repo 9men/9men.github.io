@@ -107,7 +107,7 @@
 <meta property="og:description" content="UIView是管理屏幕上矩形区域内容的对象，iOS中几乎所有UI控件都是UIView的子类。  三个结构体CGPoint、CGSize、CGRect 1.CGPoint 12345struct CGPoint&amp;#123;  CGFloat x; //控件x轴位置  CGFLoat y; //控件Y轴位置&amp;#125;    CGSize 12345struct CGSize&amp;#123;  CGFlo">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/01/27/UIView解析/1.png">
-<meta property="og:updated_time" content="2018-01-27T03:56:53.000Z">
+<meta property="og:updated_time" content="2018-01-27T05:13:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIView解析">
 <meta name="twitter:description" content="UIView是管理屏幕上矩形区域内容的对象，iOS中几乎所有UI控件都是UIView的子类。  三个结构体CGPoint、CGSize、CGRect 1.CGPoint 12345struct CGPoint&amp;#123;  CGFloat x; //控件x轴位置  CGFLoat y; //控件Y轴位置&amp;#125;    CGSize 12345struct CGSize&amp;#123;  CGFlo">
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  834
+                  1,211
                 </span>
               
 
@@ -417,7 +417,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  5
                 </span>
               
             </div>
@@ -508,6 +508,17 @@
 </ul>
 </li>
 </ul>
+<h4 id="UIView常用属性和方法"><a href="#UIView常用属性和方法" class="headerlink" title="UIView常用属性和方法"></a>UIView常用属性和方法</h4><ul>
+<li>属性</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">CGRect</span> frame;<span class="comment">//控件的位置和大小，所有的控件必须指定这个属性，否则即使有控件也无法显示</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">CGRect</span> bounds;<span class="comment">//当前控件位置和大小，但是和frame不同的是它的位置是确定的(0,0)</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">CGPoint</span> center;<span class="comment">//控件的中心位置，一般用户进行控件定位</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">CGAffineTransform</span> transform;<span class="comment">//控件矩阵变化，包括平移、缩放、旋转，默认为CGAffineTransformIdentity</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">UIViewAutoresizing</span> autoresizingMask;<span class="comment">//控件旋转时大小自动伸缩，默认为UIViewAutoresizingNone</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">readonly</span>) <span class="built_in">UIView</span> *superview;<span class="comment">//当前控件的父控件</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">readonly</span>,<span class="keyword">copy</span>) <span class="built_in">NSArray</span> *subviews;<span class="comment">//当前控件的子控件返回一个数组</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isHidden) <span class="built_in">BOOL</span> hidden;<span class="comment">//是否隐藏，默认为不隐藏。</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">UIViewContentMode</span> contentMode; <span class="comment">//控件的显示模式。如ImageView的居中模式等</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">NSInteger</span> tag;<span class="comment">//控件的标签属性</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>方法</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addSubview:(<span class="built_in">UIView</span> *) view;<span class="comment">//添加子控件</span></span><br><span class="line">- (<span class="keyword">void</span>)removeFromSuperView;<span class="comment">//从父控件中移除当前控件</span></span><br><span class="line">- (<span class="keyword">void</span>)insertSubview:(<span class="built_in">UIView</span> *)view atIndex:(<span class="built_in">NSInteger</span>) index; <span class="comment">//在指定位置插入子控件</span></span><br><span class="line">- (<span class="keyword">void</span>)beginAnimations:*(<span class="built_in">NSString</span> *)animationID context:(<span class="keyword">void</span> *)context;<span class="comment">//开始一段动画</span></span><br><span class="line">+ (<span class="keyword">void</span>)animateWithDuration:(<span class="built_in">NSTimeInterval</span>)duration animations:(<span class="keyword">void</span> (^)(<span class="keyword">void</span>))animations <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">4</span>_0);<span class="comment">//以block的形式执行一段动画，注意这个方法有几种相关的方法</span></span><br><span class="line">- (<span class="keyword">void</span>)addGestureRecognizer:(<span class="built_in">UIGestureRecognizer</span>*)gestureRecognizer <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">3</span>_2);	<span class="comment">//添加手势操作</span></span><br><span class="line">- (<span class="keyword">void</span>)removeGestureRecognizer:(<span class="built_in">UIGestureRecognizer</span>*)gestureRecognizer <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">3</span>_2); <span class="comment">//移除手势操作</span></span><br></pre></td></tr></table></figure>
+<p><code>上面所有位置的属性都是相对于父控件而言（不是相对主屏幕而言）</code></p>
+<p>​</p>
+</li>
+</ul>
 
       
     </div>
@@ -526,7 +537,7 @@
   <p><span>本文标题:</span><a href="/2018/01/27/UIView解析/">UIView解析</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 9men 的个人博客">9men</a></p>
   <p><span>发布时间:</span>2018年01月27日 - 10:01</p>
-  <p><span>最后更新:</span>2018年01月27日 - 11:01</p>
+  <p><span>最后更新:</span>2018年01月27日 - 13:01</p>
   <p><span>原始链接:</span><a href="/2018/01/27/UIView解析/" title="UIView解析">http://yoursite.com/2018/01/27/UIView解析/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/01/27/UIView解析/"  aria-label="复制成功！"></i></span>
   </p>
@@ -729,7 +740,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#三个结构体CGPoint、CGSize、CGRect"><span class="nav-text">三个结构体CGPoint、CGSize、CGRect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视图的基本属性"><span class="nav-text">视图的基本属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本界面元素"><span class="nav-text">基本界面元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView的方法"><span class="nav-text">UIView的方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#三个结构体CGPoint、CGSize、CGRect"><span class="nav-text">三个结构体CGPoint、CGSize、CGRect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视图的基本属性"><span class="nav-text">视图的基本属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本界面元素"><span class="nav-text">基本界面元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView的方法"><span class="nav-text">UIView的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView常用属性和方法"><span class="nav-text">UIView常用属性和方法</span></a></li></ol></div>
             
 
           </div>
@@ -764,7 +775,7 @@
   本站访客数:<span id="busuanzi_value_site_uv"></span>人次
   </span>
   <div class="powered-by">
-  <span class="post-count">博客全站共2.1k字</span>
+  <span class="post-count">博客全站共2.5k字</span>
 </div>
 
 
