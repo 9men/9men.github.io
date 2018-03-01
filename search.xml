@@ -3,21 +3,6 @@
   
     
     <entry>
-      <title><![CDATA[标签测试]]></title>
-      <url>/2018/03/01/%E6%A0%87%E7%AD%BE%E6%B5%8B%E8%AF%95/</url>
-      <content type="html"><![CDATA[<p>标签测试</p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> 标签测试 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[iOS中代理使用]]></title>
       <url>/2018/03/01/iOS%E4%B8%AD%E4%BB%A3%E7%90%86%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<ul>
@@ -68,6 +53,12 @@
         </categories>
         
         
+        <tags>
+            
+            <tag> iOS </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -99,6 +90,12 @@
             
         </categories>
         
+        
+        <tags>
+            
+            <tag> iOS </tag>
+            
+        </tags>
         
     </entry>
     
@@ -251,6 +248,12 @@ return cell;
         </categories>
         
         
+        <tags>
+            
+            <tag> iOS </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -296,6 +299,12 @@ return cell;
             
         </categories>
         
+        
+        <tags>
+            
+            <tag> iOS </tag>
+            
+        </tags>
         
     </entry>
     
@@ -455,6 +464,12 @@ return cell;
             
         </categories>
         
+        
+        <tags>
+            
+            <tag> iOS </tag>
+            
+        </tags>
         
     </entry>
     
