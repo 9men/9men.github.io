@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="通知中心(NSNotificationCenter)是在程序内部提供的一种广播机制。把接收到的消息，根据内部的消息转发表，将消息转发给需要的对象。 通知使用分为两步，第一步：在需要使用的地方注册要观察的通知，第二部：在某地方发送通知。(发送的通知可以是我们自定义的通知，也可以是系统的通知) 如下demo  Person.h   123456789101112131415////  Person.">
+<meta name="description" content="通知中心(NSNotificationCenter)是在程序内部提供的一种广播机制。把接收到的消息，根据内部的消息转发表，将消息转发给需要的对象。  通知使用分为两步，第一步：在需要使用的地方注册要观察的通知，第二部：在某地方发送通知。(发送的通知可以是我们自定义的通知，也可以是系统的通知) Demo Person.h   123456789101112131415////  Person.h/">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS中的通知NSNotificationCenter">
 <meta property="og:url" content="http://yoursite.com/2018/03/01/iOS中的通知NSNotificationCenter/index.html">
 <meta property="og:site_name" content="9men">
-<meta property="og:description" content="通知中心(NSNotificationCenter)是在程序内部提供的一种广播机制。把接收到的消息，根据内部的消息转发表，将消息转发给需要的对象。 通知使用分为两步，第一步：在需要使用的地方注册要观察的通知，第二部：在某地方发送通知。(发送的通知可以是我们自定义的通知，也可以是系统的通知) 如下demo  Person.h   123456789101112131415////  Person.">
+<meta property="og:description" content="通知中心(NSNotificationCenter)是在程序内部提供的一种广播机制。把接收到的消息，根据内部的消息转发表，将消息转发给需要的对象。  通知使用分为两步，第一步：在需要使用的地方注册要观察的通知，第二部：在某地方发送通知。(发送的通知可以是我们自定义的通知，也可以是系统的通知) Demo Person.h   123456789101112131415////  Person.h/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-01T02:35:23.000Z">
+<meta property="og:updated_time" content="2018-03-01T03:18:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中的通知NSNotificationCenter">
-<meta name="twitter:description" content="通知中心(NSNotificationCenter)是在程序内部提供的一种广播机制。把接收到的消息，根据内部的消息转发表，将消息转发给需要的对象。 通知使用分为两步，第一步：在需要使用的地方注册要观察的通知，第二部：在某地方发送通知。(发送的通知可以是我们自定义的通知，也可以是系统的通知) 如下demo  Person.h   123456789101112131415////  Person.">
+<meta name="twitter:description" content="通知中心(NSNotificationCenter)是在程序内部提供的一种广播机制。把接收到的消息，根据内部的消息转发表，将消息转发给需要的对象。  通知使用分为两步，第一步：在需要使用的地方注册要观察的通知，第二部：在某地方发送通知。(发送的通知可以是我们自定义的通知，也可以是系统的通知) Demo Person.h   123456789101112131415////  Person.h/">
 
 
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  611
+                  609
                 </span>
               
 
@@ -438,10 +438,11 @@
 
       
         <ol>
-<li>通知中心(NSNotificationCenter)是在程序内部提供的一种广播机制。把接收到的消息，根据内部的消息转发表，将消息转发给需要的对象。</li>
+<li><p>通知中心(NSNotificationCenter)是在程序内部提供的一种广播机制。把接收到的消息，根据内部的消息转发表，将消息转发给需要的对象。</p>
+</li>
 <li><p>通知使用分为两步，第一步：在需要使用的地方注册要观察的通知，第二部：在某地方发送通知。(发送的通知可以是我们自定义的通知，也可以是系统的通知)</p>
-<pre><code>如下demo
-</code></pre><p> <code>Person.h</code></p>
+<p><strong>Demo</strong></p>
+<p><code>Person.h</code></p>
 </li>
 </ol>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  Person.h</span></span><br><span class="line"><span class="comment">//  通知-demo</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  Created by 武 on 18/2/28.</span></span><br><span class="line"><span class="comment">//  Copyright © 2018年 com. All rights reserved.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span> : <span class="title">NSObject</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSString</span> *name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
@@ -472,7 +473,7 @@
   <p><span>本文标题:</span><a href="/2018/03/01/iOS中的通知NSNotificationCenter/">iOS中的通知NSNotificationCenter</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 9men 的个人博客">9men</a></p>
   <p><span>发布时间:</span>2018年03月01日 - 10:03</p>
-  <p><span>最后更新:</span>2018年03月01日 - 10:03</p>
+  <p><span>最后更新:</span>2018年03月01日 - 11:03</p>
   <p><span>原始链接:</span><a href="/2018/03/01/iOS中的通知NSNotificationCenter/" title="iOS中的通知NSNotificationCenter">http://yoursite.com/2018/03/01/iOS中的通知NSNotificationCenter/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/03/01/iOS中的通知NSNotificationCenter/"  aria-label="复制成功！"></i></span>
   </p>
