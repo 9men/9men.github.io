@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="点击程序图标打开程序 执行main函数 执行UIApplicationMain函数 通过UIApplicationMain方法的反射创建UIApplication对象设置代理，开启消息循环  开启监听程序事件 123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictio">
+<meta name="description" content="点击程序图标打开程序  执行main函数 123456789int main(int argc, char * argv[]) &amp;#123;     @autoreleasepool &amp;#123;          //第三个参数:UIApplication类名或者子类的名称 nil == @&quot;UIApplication&quot;          //第四个参数:UIApplication的代理的代理">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS程序启动过程">
 <meta property="og:url" content="http://yoursite.com/2018/01/26/iOS程序启动过程/index.html">
 <meta property="og:site_name" content="9men">
-<meta property="og:description" content="点击程序图标打开程序 执行main函数 执行UIApplicationMain函数 通过UIApplicationMain方法的反射创建UIApplication对象设置代理，开启消息循环  开启监听程序事件 123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictio">
+<meta property="og:description" content="点击程序图标打开程序  执行main函数 123456789int main(int argc, char * argv[]) &amp;#123;     @autoreleasepool &amp;#123;          //第三个参数:UIApplication类名或者子类的名称 nil == @&quot;UIApplication&quot;          //第四个参数:UIApplication的代理的代理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-01T08:54:18.000Z">
+<meta property="og:updated_time" content="2018-03-17T11:23:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS程序启动过程">
-<meta name="twitter:description" content="点击程序图标打开程序 执行main函数 执行UIApplicationMain函数 通过UIApplicationMain方法的反射创建UIApplication对象设置代理，开启消息循环  开启监听程序事件 123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictio">
+<meta name="twitter:description" content="点击程序图标打开程序  执行main函数 123456789int main(int argc, char * argv[]) &amp;#123;     @autoreleasepool &amp;#123;          //第三个参数:UIApplication类名或者子类的名称 nil == @&quot;UIApplication&quot;          //第四个参数:UIApplication的代理的代理">
 
 
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  390
+                  532
                 </span>
               
 
@@ -438,17 +438,31 @@
 
       
         <ul>
-<li>点击程序图标打开程序</li>
-<li>执行main函数</li>
-<li>执行UIApplicationMain函数</li>
-<li><p>通过UIApplicationMain方法的反射创建UIApplication对象设置代理，开启消息循环</p>
+<li><p>点击程序图标打开程序</p>
+</li>
+<li><p>执行main函数</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span> * argv[]) &#123;</span><br><span class="line">     <span class="keyword">@autoreleasepool</span> &#123;</span><br><span class="line">          <span class="comment">//第三个参数:UIApplication类名或者子类的名称 nil == @"UIApplication"</span></span><br><span class="line">          <span class="comment">//第四个参数:UIApplication的代理的代理名称</span></span><br><span class="line">          <span class="comment">//NSStringFromClass:把类名转化字符串</span></span><br><span class="line">          <span class="comment">//NSStringFromClass好处:1.有提示功能 2.避免输入错误</span></span><br><span class="line">          <span class="keyword">return</span> <span class="built_in">UIApplicationMain</span>(argc, argv, <span class="literal">nil</span>,<span class="built_in">NSStringFromClass</span>([AppDelegate <span class="keyword">class</span>]));</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>执行UIApplicationMain函数</p>
+</li>
+<li><p>创建UIApplication对象,并设置UIApplicationMain对象的代理.</p>
+<p>  UIApplication的第三个参数就是UIApplication的名称,如果指定为nil,它会默认为UIApplication.</p>
+<p>  UIApplication的第四个参数为UIApplication的代理.</p>
 <ul>
 <li><p>开启监听程序事件</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;<span class="comment">//程序加载完毕后调用该方法&#125;</span></span><br><span class="line">- (<span class="keyword">void</span>)applicationWillResignActive:(<span class="built_in">UIApplication</span> *)application &#123;<span class="comment">//程序失去焦点调用该方法&#125;</span></span><br><span class="line">- (<span class="keyword">void</span>)applicationDidEnterBackground:(<span class="built_in">UIApplication</span> *)application &#123;<span class="comment">//程序进入后台调用该方法&#125;</span></span><br><span class="line">- (<span class="keyword">void</span>)applicationWillEnterForeground:(<span class="built_in">UIApplication</span> *)application &#123;<span class="comment">//程序从后台将要进入前台调用该方法&#125;</span></span><br><span class="line">- (<span class="keyword">void</span>)applicationDidBecomeActive:(<span class="built_in">UIApplication</span> *)application &#123;<span class="comment">//内存经过，程序将要停止调用该方法&#125;</span></span><br><span class="line">- (<span class="keyword">void</span>)applicationWillTerminate:(<span class="built_in">UIApplication</span> *)application &#123;<span class="comment">//程序将要退出调用该方法&#125;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>加载info.plist程序配置文件，主要是看我们用的是Storyboard方式加载还是代码的方式加载。</p>
+</ul>
+</li>
+<li><p>开启一个主运行循环.保证应用程序不退出.</p>
+</li>
+<li><p>加载info.plist程序配置文件，主要是看我们用的是Storyboard方式加载还是代码的方式加载。(判断一下info.plist文件当中有没有Main storyboard file base name)</p>
 <ul>
-<li><p>通过storyboard方式加载</p>
+<li>通过storyboard方式加载</li>
+</ul>
+</li>
+</ul>
 <ul>
 <li><p>在程序启动完成的时候系统自动创建一个UIWindow的实例来显示界面</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">UIWindow</span> *window;</span><br></pre></td></tr></table></figure>
@@ -459,27 +473,22 @@
 <li>并且设置这个控制器为之前创建的UIWindow的根控制器</li>
 </ul>
 </li>
-<li>显示窗口。（makeKeyAndVisible）<ul>
+<li><p>显示窗口。（makeKeyAndVisible）</p>
+<ul>
 <li>设置self.window可见并且设置UIApplication的keyWindow</li>
-</ul>
-</li>
 </ul>
 </li>
 <li><p>通过代码加载</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</span><br><span class="line">    <span class="built_in">UIViewController</span> *viewController = [[<span class="built_in">UIViewController</span> alloc] init];</span><br><span class="line">    <span class="keyword">self</span>.window.rootViewController = viewController;</span><br><span class="line">    [<span class="keyword">self</span>.window makeKeyAndVisible];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​</p>
-<ul>
-<li>首先创建串口，获取到一个UIWindow实例来显示界面。（self.window为系统自带）</li>
+</li>
+<li><p>首先创建串口，获取到一个UIWindow实例来显示界面。（self.window为系统自带）</p>
+</li>
 <li>创建一个控制器，将该控制器设置为根控制器</li>
 <li>显示窗口<code>[self.window makeKeyAndVisible]</code></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>结束程序</p>
-</li>
+<ul>
+<li>结束程序</li>
 </ul>
 
       
@@ -499,7 +508,7 @@
   <p><span>本文标题:</span><a href="/2018/01/26/iOS程序启动过程/">iOS程序启动过程</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 9men 的个人博客">9men</a></p>
   <p><span>发布时间:</span>2018年01月26日 - 17:01</p>
-  <p><span>最后更新:</span>2018年03月01日 - 16:03</p>
+  <p><span>最后更新:</span>2018年03月17日 - 19:03</p>
   <p><span>原始链接:</span><a href="/2018/01/26/iOS程序启动过程/" title="iOS程序启动过程">http://yoursite.com/2018/01/26/iOS程序启动过程/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/01/26/iOS程序启动过程/"  aria-label="复制成功！"></i></span>
   </p>
@@ -632,7 +641,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -722,7 +731,7 @@
   本站访客数:<span id="busuanzi_value_site_uv"></span>人次
   </span>
   <div class="powered-by">
-  <span class="post-count">博客全站共12.1k字</span>
+  <span class="post-count">博客全站共14.1k字</span>
 </div>
 
 
