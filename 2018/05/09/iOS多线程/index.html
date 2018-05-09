@@ -99,20 +99,18 @@
 
 
 
-<meta name="description" content="UIView是管理屏幕上矩形区域内容的对象，iOS中几乎所有UI控件都是UIView的子类。  三个结构体CGPoint、CGSize、CGRect 1.CGPoint 12345struct CGPoint&amp;#123;  CGFloat x; //控件x轴位置  CGFLoat y; //控件Y轴位置&amp;#125;    CGSize 12345struct CGSize&amp;#123;  CGFlo">
+<meta name="description" content="基本概念 进程 进程是指在系统中正在运行的一个应用程序。每个进程之间是独立的，每个进程均运行在其专用并且受保护的内存内。   线程 一个进程想要执行任务，必须至少要有一个线程，也可以有多条线程，线程是进程的基本执行单位。 线程的串行 一个进程中有多条线程，这些线程是一个个顺序执行这些任务。 线程的并行 一个进程中有多条线程，这些线程是同时执行这些任务。其实在同一时间内，CPU只能处理一条线程，只有">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UIView解析">
-<meta property="og:url" content="http://yoursite.com/2018/01/27/UIView解析/index.html">
+<meta property="og:title" content="iOS多线程">
+<meta property="og:url" content="http://yoursite.com/2018/05/09/iOS多线程/index.html">
 <meta property="og:site_name" content="9men">
-<meta property="og:description" content="UIView是管理屏幕上矩形区域内容的对象，iOS中几乎所有UI控件都是UIView的子类。  三个结构体CGPoint、CGSize、CGRect 1.CGPoint 12345struct CGPoint&amp;#123;  CGFloat x; //控件x轴位置  CGFLoat y; //控件Y轴位置&amp;#125;    CGSize 12345struct CGSize&amp;#123;  CGFlo">
+<meta property="og:description" content="基本概念 进程 进程是指在系统中正在运行的一个应用程序。每个进程之间是独立的，每个进程均运行在其专用并且受保护的内存内。   线程 一个进程想要执行任务，必须至少要有一个线程，也可以有多条线程，线程是进程的基本执行单位。 线程的串行 一个进程中有多条线程，这些线程是一个个顺序执行这些任务。 线程的并行 一个进程中有多条线程，这些线程是同时执行这些任务。其实在同一时间内，CPU只能处理一条线程，只有">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/01/27/UIView解析/1.png">
-<meta property="og:updated_time" content="2018-03-01T08:50:45.000Z">
+<meta property="og:updated_time" content="2018-05-09T10:44:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UIView解析">
-<meta name="twitter:description" content="UIView是管理屏幕上矩形区域内容的对象，iOS中几乎所有UI控件都是UIView的子类。  三个结构体CGPoint、CGSize、CGRect 1.CGPoint 12345struct CGPoint&amp;#123;  CGFloat x; //控件x轴位置  CGFLoat y; //控件Y轴位置&amp;#125;    CGSize 12345struct CGSize&amp;#123;  CGFlo">
-<meta name="twitter:image" content="http://yoursite.com/2018/01/27/UIView解析/1.png">
+<meta name="twitter:title" content="iOS多线程">
+<meta name="twitter:description" content="基本概念 进程 进程是指在系统中正在运行的一个应用程序。每个进程之间是独立的，每个进程均运行在其专用并且受保护的内存内。   线程 一个进程想要执行任务，必须至少要有一个线程，也可以有多条线程，线程是进程的基本执行单位。 线程的串行 一个进程中有多条线程，这些线程是一个个顺序执行这些任务。 线程的并行 一个进程中有多条线程，这些线程是同时执行这些任务。其实在同一时间内，CPU只能处理一条线程，只有">
 
 
 
@@ -142,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/27/UIView解析/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/09/iOS多线程/"/>
 
 
 
 
 
-  <title>UIView解析 | 9men</title>
+  <title>iOS多线程 | 9men</title>
   
 
 
@@ -319,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/27/UIView解析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/iOS多线程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="9men">
@@ -336,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">UIView解析</h1>
+          <h1 class="post-title" itemprop="name headline">iOS多线程</h1>
         
 
         <div class="post-meta">
@@ -348,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-27T10:47:18+08:00">
-                2018-01-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T18:33:50+08:00">
+                2018-05-09
               </time>
             
 
@@ -402,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,210
+                  222
                 </span>
               
 
@@ -418,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  1
                 </span>
               
             </div>
@@ -439,85 +437,22 @@
       
 
       
-        <p>UIView是管理屏幕上矩形区域内容的对象，iOS中几乎所有UI控件都是UIView的子类。</p>
-<p><img src="/2018/01/27/UIView解析/1.png" alt="UIView"></p>
-<h4 id="三个结构体CGPoint、CGSize、CGRect"><a href="#三个结构体CGPoint、CGSize、CGRect" class="headerlink" title="三个结构体CGPoint、CGSize、CGRect"></a>三个结构体CGPoint、CGSize、CGRect</h4><ul>
-<li><p>1.CGPoint</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="built_in">CGPoint</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">CGFloat</span> x; <span class="comment">//控件x轴位置</span></span><br><span class="line">  <span class="built_in">CGFLoat</span> y; <span class="comment">//控件Y轴位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+        <h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
+<li>进程<ul>
+<li>进程是指在系统中正在运行的一个应用程序。每个进程之间是独立的，每个进程均运行在其专用并且受保护的内存内。</li>
 </ul>
-<ul>
-<li><p>CGSize</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="built_in">CGSize</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">CGFloat</span> width; <span class="comment">//控件宽度</span></span><br><span class="line">  <span class="built_in">CGFloat</span> height; <span class="comment">//控件高度</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>CGRect</li>
+</li>
+<li>线程<ul>
+<li>一个进程想要执行任务，必须至少要有一个线程，也可以有多条线程，线程是进程的基本执行单位。</li>
+<li>线程的串行<ul>
+<li>一个进程中有多条线程，这些线程是一个个顺序执行这些任务。<ul>
+<li>线程的并行</li>
+<li>一个进程中有多条线程，这些线程是同时执行这些任务。其实在同一时间内，CPU只能处理一条线程，只有一条线程执行，并发同时执行是CPU在多条线程之间快速切换，只是CPU调度速度足够快，造成了同时并发执行的假象。</li>
 </ul>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="built_in">CGRect</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">CGPoint</span> origin; <span class="comment">//偏移量是相对父视图的</span></span><br><span class="line">  <span class="built_in">CGSize</span> size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="视图的基本属性"><a href="#视图的基本属性" class="headerlink" title="视图的基本属性"></a>视图的基本属性</h4><p>​</p>
-<ul>
-<li><p>frame和center都是相对父视图来说的，bounds是相对自身来说的</p>
-</li>
-<li><p>frame是相对于父视图左上角原点(0,0)的位置，改变视图的frame会改变center中心点</p>
-</li>
-<li><p>center是CGPoint值的就是整个视图的中心点，改变视图的center也会改变frame</p>
-</li>
-<li><p>bounds 是CGRect  是告诉子视图本视图的原点位置(通俗的说就是，子视图的frame的origin与父视图的bounds的origin的差，就是子视图相对于父视图左上角的位置，如果结果为负，则子视图在父视图外)</p>
-</li>
-<li><p>通过addSubview方法添加的子视图，越后添加，越显示到上层。</p>
-</li>
-<li><p>移除父视图也会把它里面的子视图移除</p>
-</li>
-</ul>
-<h4 id="基本界面元素"><a href="#基本界面元素" class="headerlink" title="基本界面元素"></a>基本界面元素</h4><ul>
-<li><p>1.UIView</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIView</span> *myView = [[<span class="built_in">UIView</span> alloc]initWithFrame:<span class="built_in">CGrectMake</span>(<span class="number">10</span>,<span class="number">10</span>,<span class="number">50</span>,<span class="number">50</span>)];<span class="comment">//创建了一个x轴10，y轴10，宽度为50，高度为50的UIView.</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.UIWindow</p>
-<ul>
-<li><p>UIWindow继承自UIView，在系统的初始化过程中创建(application didFinishLauchingWithOptions里面)</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.window = [[[<span class="built_in">UIWindos</span> alloc]initWithFrame:[<span class="built_in">UIScreen</span> mainScreen]bounds]autorelease];</span><br><span class="line"><span class="keyword">self</span>.window.backgroundColor = [<span class="built_in">UIColor</span> grayColor];       <span class="comment">//给window设置一个背景色  </span></span><br><span class="line">[<span class="keyword">self</span>.window makeKeyAndVisible];     <span class="comment">//让window显示出来</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>UIScreen代表了屏幕</p>
-</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CGRect</span> screenBounds = [ [<span class="built_in">UIScreen</span> mainScreen]bounds];    <span class="comment">//返回的是带有状态栏的Rect </span></span><br><span class="line"><span class="built_in">CGRect</span> viewBounds = [ [<span class="built_in">UIScreen</span> mainScreen]applicationFrame];    <span class="comment">//不包含状态栏的Rect</span></span><br></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ul>
-<h4 id="UIView的方法"><a href="#UIView的方法" class="headerlink" title="UIView的方法"></a>UIView的方法</h4><ul>
-<li>一个 UIView 里面可以包含许多的 Subview（其他的 UIView），而这些 Subview 彼此之间是有所谓的阶层关系，这有点类似绘图软体中图层的概念，下面程式码示演示了几个在管理图层（Subview）上常用的方法，其程式码如下。</li>
-<li><p>1.首先是大家最常使用的新增和移除Subview。</p>
-<p>​<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[Subview removeFromSuperview];     <span class="comment">//将Subview从当前的UIView中移除 </span></span><br><span class="line">[<span class="built_in">UIView</span> addSubview:Subview];     <span class="comment">//UIView增加一个Subview</span></span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><p>2.在UIView中将Subview往前或是往后移动一个图层，往前移动会覆盖住较后层的 Subview，而往后移动则会被较上层的Subview所覆盖。</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">UIView</span> bringSubviewToFront:Subview];       <span class="comment">//将Subview往前移动一个图层（与它的前一个图层对调位置）//将Subview往前移动一个图层（与它的前一个图层对调位置）</span></span><br><span class="line"></span><br><span class="line">[<span class="built_in">UIView</span> sendSubviewToBack:Subview];      <span class="comment">//将Subview往后移动一个图层（与它的后一个图层对调位置)</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>3.在UIView中使用索引Index交换两的Subview彼此的图层层级。</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">UIView</span> exchangeSubviewAtIndex:indexA withSubviewAtIndex:indexB];    <span class="comment">//交换两个图层</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.使用Subview的变数名称取得它在UIView中的索引值（Index ）</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSInteger</span> index = [[<span class="built_in">UIView</span> subviews] indexOfObject:Subview名称];       <span class="comment">//取得Index</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.替Subview加上NSInteger 的註记(Tag)好让之后它们分辨彼此。</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Subview setTag:<span class="built_in">NSInteger</span>];       <span class="comment">//加上标记</span></span><br><span class="line">	[<span class="built_in">UIView</span> viewWithTag:<span class="built_in">NSInteger</span>];  <span class="comment">//通过标记得到view 返回值为UIView</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>6.最后是取得UIView中所有的Subview，呼叫此方法会传回一个 NSArray，并以由后往前的顺序列出这些 Subview，下图中是列出范例图片里Root中所有的Subview。</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">UIView</span> subviews] ;        <span class="comment">//取的UIView下的所有Subview</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="UIView常用属性和方法"><a href="#UIView常用属性和方法" class="headerlink" title="UIView常用属性和方法"></a>UIView常用属性和方法</h4><ul>
-<li>属性</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">CGRect</span> frame;<span class="comment">//控件的位置和大小，所有的控件必须指定这个属性，否则即使有控件也无法显示</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">CGRect</span> bounds;<span class="comment">//当前控件位置和大小，但是和frame不同的是它的位置是确定的(0,0)</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">CGPoint</span> center;<span class="comment">//控件的中心位置，一般用户进行控件定位</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">CGAffineTransform</span> transform;<span class="comment">//控件矩阵变化，包括平移、缩放、旋转，默认为CGAffineTransformIdentity</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">UIViewAutoresizing</span> autoresizingMask;<span class="comment">//控件旋转时大小自动伸缩，默认为UIViewAutoresizingNone</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">readonly</span>) <span class="built_in">UIView</span> *superview;<span class="comment">//当前控件的父控件</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">readonly</span>,<span class="keyword">copy</span>) <span class="built_in">NSArray</span> *subviews;<span class="comment">//当前控件的子控件返回一个数组</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">getter</span>=isHidden) <span class="built_in">BOOL</span> hidden;<span class="comment">//是否隐藏，默认为不隐藏。</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">UIViewContentMode</span> contentMode; <span class="comment">//控件的显示模式。如ImageView的居中模式等</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">NSInteger</span> tag;<span class="comment">//控件的标签属性</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>方法</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addSubview:(<span class="built_in">UIView</span> *) view;<span class="comment">//添加子控件</span></span><br><span class="line">- (<span class="keyword">void</span>)removeFromSuperView;<span class="comment">//从父控件中移除当前控件</span></span><br><span class="line">- (<span class="keyword">void</span>)insertSubview:(<span class="built_in">UIView</span> *)view atIndex:(<span class="built_in">NSInteger</span>) index; <span class="comment">//在指定位置插入子控件</span></span><br><span class="line">- (<span class="keyword">void</span>)beginAnimations:*(<span class="built_in">NSString</span> *)animationID context:(<span class="keyword">void</span> *)context;<span class="comment">//开始一段动画</span></span><br><span class="line">+ (<span class="keyword">void</span>)animateWithDuration:(<span class="built_in">NSTimeInterval</span>)duration animations:(<span class="keyword">void</span> (^)(<span class="keyword">void</span>))animations <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">4</span>_0);<span class="comment">//以block的形式执行一段动画，注意这个方法有几种相关的方法</span></span><br><span class="line">- (<span class="keyword">void</span>)addGestureRecognizer:(<span class="built_in">UIGestureRecognizer</span>*)gestureRecognizer <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">3</span>_2);	<span class="comment">//添加手势操作</span></span><br><span class="line">- (<span class="keyword">void</span>)removeGestureRecognizer:(<span class="built_in">UIGestureRecognizer</span>*)gestureRecognizer <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">3</span>_2); <span class="comment">//移除手势操作</span></span><br></pre></td></tr></table></figure>
-<p><code>上面所有位置的属性都是相对于父控件而言（不是相对主屏幕而言）</code></p>
-<p>​</p>
 </li>
 </ul>
 
@@ -535,12 +470,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/01/27/UIView解析/">UIView解析</a></p>
+  <p><span>本文标题:</span><a href="/2018/05/09/iOS多线程/">iOS多线程</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 9men 的个人博客">9men</a></p>
-  <p><span>发布时间:</span>2018年01月27日 - 10:01</p>
-  <p><span>最后更新:</span>2018年03月01日 - 16:03</p>
-  <p><span>原始链接:</span><a href="/2018/01/27/UIView解析/" title="UIView解析">http://yoursite.com/2018/01/27/UIView解析/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/01/27/UIView解析/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年05月09日 - 18:05</p>
+  <p><span>最后更新:</span>2018年05月09日 - 18:05</p>
+  <p><span>原始链接:</span><a href="/2018/05/09/iOS多线程/" title="iOS多线程">http://yoursite.com/2018/05/09/iOS多线程/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/05/09/iOS多线程/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -583,8 +518,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/26/iOS程序启动过程/" rel="next" title="iOS程序启动过程">
-                <i class="fa fa-chevron-left"></i> iOS程序启动过程
+              <a href="/2018/03/17/UIApplication对象/" rel="next" title="UIApplication对象">
+                <i class="fa fa-chevron-left"></i> UIApplication对象
               </a>
             
           </div>
@@ -592,10 +527,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/29/UIScrollView/" rel="prev" title="UIScrollView">
-                UIScrollView <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -751,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#三个结构体CGPoint、CGSize、CGRect"><span class="nav-text">三个结构体CGPoint、CGSize、CGRect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视图的基本属性"><span class="nav-text">视图的基本属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本界面元素"><span class="nav-text">基本界面元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView的方法"><span class="nav-text">UIView的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView常用属性和方法"><span class="nav-text">UIView常用属性和方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-text">基本概念</span></a></li></ol></div>
             
 
           </div>
